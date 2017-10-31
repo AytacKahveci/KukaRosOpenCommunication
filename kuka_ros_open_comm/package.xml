@@ -1,0 +1,16 @@
+<package format="1">
+  <name>kuka_ros_open_comm</name>
+  <version>0.12.0</version>
+  <description>KUKA ROS Open Communication Library.</description>
+  <maintainer email="aytackahveci93@gmail.com">Aytaç Kahveci</maintainer>
+
+  <license>BSD</license>
+
+
+  <author>Aytaç Kahveci</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+  
+</package>
