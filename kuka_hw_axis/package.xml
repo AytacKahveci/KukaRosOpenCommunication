@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="1">
+  <name>kuka_hw_axis</name>
+  <version>0.1.0</version>
+  <description>A ROS-Control hardware interface for use with KUKA ROS Open Communication library</description>
+  <author>Aytac Kahveci</author>
+  <maintainer email="aytackahveci93@gmail.com">Aytac Kahveci</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_modules</build_depend>
+
+  <build_depend>controller_manager</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>joint_limits_interface</build_depend>
+  <build_depend>realtime_tools</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>kuka_ros_open_comm</build_depend>
+  
+  <run_depend>controller_manager</run_depend>
+  <run_depend>hardware_interface</run_depend>
+  <run_depend>joint_limits_interface</run_depend>
+  <run_depend>realtime_tools</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>kuka_ros_open_comm</run_depend>
+</package>
+

@@ -1,0 +1,25 @@
+<launch>
+ <!-- Set the param that trajectory_execution_manager needs to find the controller plugin -->
+ <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+ <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+ <!-- load controller_list -->
+ <rosparam file="$(find kuka_moveit_configuration)/config/controller.yaml"/>
+ <!-- Load controllers -->
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+            args="joint_state_controller arm_controller --shutdown-timeout 1"/>
+        <!-- Load robot state publisher -->
+        <!-- Start node without FT sensor -->
+        <node name="kuka_hw_interface_node" pkg="kuka_hw_interface"
+          type="kuka_hw_interface_node" respawn="false"
+          output="screen"
+          required="true">
+        </node>
+         <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find kuka_moveit_configuration)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+  
+  <node pkg="moveit_ros_move_group" type="move_group" name="any_name" output="screen">
+  <remap from="joint_states" to="robot/joint_states"/>
+</node>
+</launch>

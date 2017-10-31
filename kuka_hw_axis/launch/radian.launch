@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <launch>
+        <arg name="sim" default="false" />
+	
+	<!-- Set the param that trajectory_execution_manager needs to find the controller plugin -->
+	 <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+	 <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+	 <!-- load controller_list -->
+	 <rosparam file="$(find kuka_moveit_configuration)/config/controller.yaml"/>
+	 
+	 <!-- Load controllers -->
+        <!-- Load standard kuka controller joint names from YAML file to parameter server -->
+        <rosparam file="$(find kuka_hw_radian)/config/controller_joint_names.yaml" command="load"/>
+        <!-- Load joint controller configurations from YAML file to parameter server -->
+        <rosparam file="$(find kuka_hw_radian)/config/hardware_controllers.yaml" command="load"/>
+
+        <!-- Load controllers -->
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+            args="joint_state_controller arm_controller --shutdown-timeout 1"/>
+        <!-- Load robot state publisher -->
+        <!-- Start node without FT sensor -->
+        <node name="kuka_hw_radian_interface_main" pkg="kuka_hw_radian"
+          type="kuka_hw_radian_interface_main" respawn="false"
+          output="screen"
+          required="true">
+
+        </node>
+	
+	 <node pkg="moveit_ros_move_group" type="move_group" name="any_name" output="screen">
+	  <remap from="joint_states" to="robot/joint_states"/>
+	</node>
+
+    </launch>
