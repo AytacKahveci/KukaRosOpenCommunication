@@ -10,17 +10,17 @@
 	 
 	 <!-- Load controllers -->
         <!-- Load standard kuka controller joint names from YAML file to parameter server -->
-        <rosparam file="$(find kuka_hw_radian)/config/controller_joint_names.yaml" command="load"/>
+        <rosparam file="$(find kuka_hw_axis)/config/controller_joint_names.yaml" command="load"/>
         <!-- Load joint controller configurations from YAML file to parameter server -->
-        <rosparam file="$(find kuka_hw_radian)/config/hardware_controllers.yaml" command="load"/>
+        <rosparam file="$(find kuka_hw_axis)/config/hardware_controllers.yaml" command="load"/>
 
         <!-- Load controllers -->
         <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
             args="joint_state_controller arm_controller --shutdown-timeout 1"/>
         <!-- Load robot state publisher -->
         <!-- Start node without FT sensor -->
-        <node name="kuka_hw_radian_interface_main" pkg="kuka_hw_radian"
-          type="kuka_hw_radian_interface_main" respawn="false"
+        <node name="kuka_hw_axis_interface_main" pkg="kuka_hw_axis"
+          type="kuka_hw_axis_interface_main" respawn="false"
           output="screen"
           required="true">
 
