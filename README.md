@@ -4,7 +4,7 @@ Allows controlling KUKA Robot without additional technology package.
 ## About KukaRosOpenCommunication
 KukaOpenCommunication is an open-source interface that allows controlling Kuka robots by using Robot Operating System without requirement of an additional technology package. This interface was developed based on OpenShowVar[1] and JOpenShowVar[2] projects. It is compatible for KRC4 controllers. 
 
-Maintainer: Aytaç Kahveci
+Maintainer: Aytaç Kahveci                                                                                                       
 Mail: aytackahveci93@gmail.com
 
 ## References
