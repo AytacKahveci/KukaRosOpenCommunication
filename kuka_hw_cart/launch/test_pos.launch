@@ -3,9 +3,9 @@
         <arg name="sim" default="false" />
 
         <!-- Load standard kuka controller joint names from YAML file to parameter server -->
-        <rosparam file="$(find kuka_hw_cart_interface)/config/controller_joint_names.yaml" command="load"/>
+        <rosparam file="$(find kuka_hw_cart)/config/controller_joint_names.yaml" command="load"/>
         <!-- Load joint controller configurations from YAML file to parameter server -->
-        <rosparam file="$(find kuka_hw_cart_interface)/config/hardware_controllers.yaml" command="load"/>
+        <rosparam file="$(find kuka_hw_cart)/config/hardware_controllers.yaml" command="load"/>
 
         <!-- Load controllers -->
         <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
