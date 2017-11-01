@@ -73,9 +73,7 @@ public:
     }
 
     ~KRLFrame()
-    {
-        delete krl_variable_;
-    }
+    {}
 
     std::vector<std::string> getNodes()
     {
