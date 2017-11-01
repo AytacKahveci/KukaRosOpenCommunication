@@ -8,8 +8,8 @@ Maintainer: Aytaç Kahveci
 Mail: aytackahveci93@gmail.com
 
 ## References
-OpenShowVar project: https://github.com/cyberpro4/openshowvar                                                                   
-JOpenShowVar project: https://github.com/aauc-mechlab/JOpenShowVar
+[1]OpenShowVar project: https://github.com/cyberpro4/openshowvar                                                                   
+[2]JOpenShowVar project: https://github.com/aauc-mechlab/JOpenShowVar
 
 ## Usage of the KukaRosOpenCommunication Interface
 First you should open the port 7000 for communication in the KRC controller. 
