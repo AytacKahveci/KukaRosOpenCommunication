@@ -95,34 +95,34 @@ public:
 
     void setA1(double d)
     {
-        map_.at(getNodes()[0]) = d;
+        map_["A1"] = d;
     }
 
 
     void setA2(double d)
     {
-        map_.at(getNodes()[1]) = d;
+        map_["A2"] = d;
     }
 
     void setA3(double d)
     {
-        map_.at(getNodes()[2]) = d;
+        map_["A3"] = d;
     }
 
     void setA4(double d)
     {
-        map_.at(getNodes()[3]) = d;
+        map_["A4"] = d;
     }
 
     void setA5(double d)
     {
-        map_.at(getNodes()[4]) = d;
+        map_["A5"] = d;
     }
 
 
     void setA6(double d)
     {
-        map_.at(getNodes()[5]) = d;
+        map_["A6"] = d;
     }
 
     /**
