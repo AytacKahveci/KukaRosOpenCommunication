@@ -7,5 +7,5 @@
          <!-- load controller_list -->
 	 <rosparam file="$(find kuka_moveit_configuration)/config/controller.yaml"/>
         <!-- Load standard kuka controller joint names from YAML file to parameter server -->
-        <include file="$(find kuka_hw_radian)/launch/trajectory.launch"> </include>
+        <include file="$(find kuka_hw_axis)/launch/trajectory.launch"> </include>
 </launch>
