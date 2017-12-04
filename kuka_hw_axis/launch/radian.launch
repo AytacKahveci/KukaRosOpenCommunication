@@ -16,7 +16,7 @@
 
         <!-- Load controllers -->
         <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-            args="joint_state_controller arm_controller --shutdown-timeout 1"/>
+            args="joint_state_controller position_trajectory_controller: --shutdown-timeout 1"/>
         <!-- Load robot state publisher -->
         <!-- Start node without FT sensor -->
         <node name="kuka_hw_axis_interface_main" pkg="kuka_hw_axis"
