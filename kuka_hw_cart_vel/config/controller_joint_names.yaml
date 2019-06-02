@@ -1,0 +1,8 @@
+controller_joint_names:
+    - X
+    - Y
+    - Z
+    - A
+    - B
+    - C
+    - vel_variable

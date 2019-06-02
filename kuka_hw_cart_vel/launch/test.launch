@@ -1,0 +1,15 @@
+<launch>
+    <!-- Load standart kuka controller joint names from YAML file to parameter server -->
+    <rosparam file="$(find kuka_hw_cart_vel)/config/controller_joint_names.yaml" command="load"/>
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find kuka_hw_cart_vel)/config/hardware_controllers.yaml" command="load"/>
+
+    <!-- Load controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="joint_state_controller joint_position_controller TCP_velocity_command --shutdown-timeout 1"/>
+
+    <node name="kuka_hw_cart_vel" type="kuka_hw_cart_vel_main" pkg="kuka_hw_cart_vel" output="screen" required="true"/>
+    
+    <!-- Load robot state publisher -->
+    <node name="kuka_robot_state_publisher" type="kuka_robot_state_publisher" pkg="kuka_hw_cart_vel" />
+</launch>

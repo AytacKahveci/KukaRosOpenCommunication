@@ -1,0 +1,25 @@
+#Publish all joint_states
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 25
+
+# Joint Position Controller
+joint_position_controller:
+    type: position_controllers/JointGroupPositionController
+    joints:
+        - X
+        - Y
+        - Z
+        - A
+        - B
+        - C
+
+#Velocity Control variable
+TCP_velocity_command:
+    type: velocity_controllers/JointVelocityController
+    joint: "vel_variable"
+
+Robot_IP: "172.31.1.147"
+Robot_Port: 7000
+
+starting_coordinates: [0, 0, 0, 90, 0, 180]
